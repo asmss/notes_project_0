@@ -1,0 +1,42 @@
+name: notes
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  provider: ^6.1.5+1
+  http: ^1.6.0
+  isar: ^3.1.0
+  isar_flutter_libs: ^3.1.0
+  path_provider: ^2.1.5
+  awesome_notifications: ^0.10.1
+  flutter_launcher_icons: ^0.14.4
+  device_info_plus: ^12.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_native_splash: ^2.4.0  
+  flutter_lints: ^6.0.0
+  isar_generator: ^3.1.0+1
+  build_runner: ^2.4.13
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/icon_app.jpg" 
+  min_sdk_android: 21 
+  adaptive_icon_background: "#AA853B" 
+  adaptive_icon_foreground: "assets/icons/icon_app.jpg"
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
