@@ -44,11 +44,15 @@ class ApiService {
     return jsonDecode(response.body);
   }
 
-  Future<void> updateNote(Note note, String userId) async {
-    final response = await api.updateNoteRequest(note.id!, note.toJson(), userId);
+Future<void> updateNote(Note note, String userId) async {
+  print("Güncelleme isteği gönderiliyor. ID: ${note.id}, URL: ${api.baseUrl}/update/${note.id}");
 
-    if (response.statusCode != 200) {
-      throw Exception("Not güncellenirken bir hata oluştu");
-    }
+  final response = await api.updateNoteRequest(note.id!, note.toJson(), userId);
+
+  if (response.statusCode != 200) {
+    print("Backend hata kodu: ${response.statusCode}");
+    print("Backend hata gövdesi: ${response.body}");
+    throw Exception("Not güncellenirken bir hata oluştu");
   }
+}
 }

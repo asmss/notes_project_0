@@ -1,0 +1,60 @@
+Vintage Note
+Bu proje, modern mobil teknolojiler ve ölçeklenebilir bir backend mimarisi kullanılarak geliştirilmiş, cihaz tabanlı senkronizasyon yeteneğine sahip bir not alma uygulamasıdır. Kullanıcılar notlarını yerel olarak saklayabildiği gibi, bulut tabanlı backend sayesinde verilerini güvenle yedekleyebilir ve hatırlatıcılar kurabilir.
+
+ Öne Çıkan Özellikler
+Cihaz Kimliği ile Senkronizasyon: Kayıt gerektirmeden, her cihazın kendine has ID'si (identifierForVendor/Android ID) üzerinden verileri bulutta filtreler ve saklar.
+
+Akıllı Hatırlatıcılar: Awesome Notifications entegrasyonu ile notlar için tam vaktinde bildirimler gönderir.
+
+Hızlı Arama & Filtreleme: Yerel veritabanı (Isar) sayesinde notlar içerisinde anlık arama yapma imkanı sağlar.
+
+Çevrimdışı Çalışma Desteği: İnternet olmasa bile notlarınızı alabilir, bağlantı sağlandığında bulut ile senkronize edebilirsiniz.
+
+ Kullanılan Teknolojiler
+Frontend (Mobile)
+Flutter: Cross-platform mobil uygulama geliştirme.
+
+Provider: State management (durum yönetimi).
+
+Isar Database: Yüksek performanslı, NoSQL yerel veritabanı.
+
+Awesome Notifications: Gelişmiş yerel bildirim yönetimi.
+
+HTTP: Backend API ile haberleşme.
+
+Backend
+Python Flask: RESTful API geliştirme.
+
+MongoDB Atlas: Cloud tabanlı NoSQL veritabanı.
+
+Render: Backend servisinin canlıya alınması (Deployment).
+
+Flask-CORS: Güvenli çapraz kaynak paylaşımı yönetimi.
+
+📂 Proje Yapısı
+Plaintext
+/notes_project_0
+   ├── backend/      # Flask API, MongoDB modelleri ve controller yapıları
+   └── notes/        # Flutter mobil uygulama kaynak kodları ve varlıklar (assets)
+🔧 Kurulum ve Çalıştırma
+1. Backend Kurulumu
+backend klasörüne gidin.
+
+Gereksinimleri yükleyin: pip install -r requirements.txt
+
+.env dosyası oluşturup MONGO_URI bilginizi ekleyin.
+
+Sunucuyu başlatın: python app.py
+
+2. Frontend Kurulumu
+notes klasörüne gidin.
+
+Paketleri çekin: flutter pub get
+
+api_service.dart içindeki baseUrl bilgisini kendi sunucu adresinizle güncelleyin.
+
+Uygulamayı başlatın: flutter run
+
+Geliştiren: Asım Karabulut
+
+Konya Teknik Üniversitesi - Bilgisayar Mühendisliği 4. Sınıf Öğrencisi

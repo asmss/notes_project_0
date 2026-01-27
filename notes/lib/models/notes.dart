@@ -46,9 +46,9 @@ Map<String,dynamic> toJson(){
    return{
     "title":title,
     "content":content,
-    "createdAt":createdAt?.toIso8601String(),
+    "createdAt":createdAt.toIso8601String(),
     "isCompleted":isCompleted,
-    "reminderDate":reminderDate
+    "reminderDate":reminderDate?.toIso8601String()
    };
 }
 

@@ -53,10 +53,42 @@ class NoteProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+Future<void> syncNotes() async {
+  final unsyncedNotes = await isarService.isar.notes
+      .filter()
+      .isSyncedEqualTo(false)
+      .isDeletedLocallyEqualTo(false)
+      .findAll();
+
+  if (unsyncedNotes.isEmpty) return;
+
+  String userId = await _getDeviceId();
+
+  for (var note in unsyncedNotes) {
+    try {
+if (note.id == null || note.id!.length != 24) {
+    final syncedNote = await apiService.addNote(note, userId);
+    note.id = syncedNote.id;
+  } else {
+    await apiService.updateNote(note, userId);
+  }
+  note.isSynced = true;
+  await isarService.saveNote(note); 
+    } catch (e) {
+      print("Senkronizasyon Hatası Detayı ($note.id): $e");
+      break; 
+    }
+  }
+  notifyListeners();
+}
+
+
+
   Future<void> allNotes() async {
     _notes = await isarService.getAllNotes();
     notifyListeners();
-
+     
+     await syncNotes();
     _isLoading = true;
     _error = null;
     notifyListeners();
@@ -82,25 +114,24 @@ class NoteProvider extends ChangeNotifier {
     }
   }
 
-  Future<void> add_note(Note note) async {
-    note.isSynced = false;
-    await isarService.saveNote(note);
-    _notes = await isarService.getAllNotes();
-    notifyListeners();
-    try {
-      String userId = await _getDeviceId();
-      final syncedNote = await apiService.addNote(note, userId);
-      note.id = syncedNote.id;
-      note.isSynced = true;
+Future<void> add_note(Note note) async {
+  note.isSynced = false;
+  await isarService.saveNote(note); 
+  _notes = await isarService.getAllNotes();
+  notifyListeners();
 
-      await isarService.saveNote(note);
-      _error = null;
-    } catch (e) {
-      print("Provider add_note Hatası: $e");
-    } finally {
-      notifyListeners();
-    }
+  try {
+    String userId = await _getDeviceId();
+    final syncedNote = await apiService.addNote(note, userId); 
+    
+    note.id = syncedNote.id; 
+    note.isSynced = true;
+
+    await isarService.saveNote(note); 
+  } catch (e) {
+    print("Ekleme sırasında internet yoktu, ID yerelde kaldı.");
   }
+}
 
   Future<void> deleted(Note note) async {
     note.isDeletedLocally = true;
