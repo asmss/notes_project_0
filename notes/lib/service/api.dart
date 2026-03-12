@@ -6,7 +6,8 @@ class Api {
   final http.Client client;
   Api(this.client);
      final String baseUrl = "https://notes-project-0.onrender.com";
-     final Duration timeoutdur = const Duration(seconds: 45);
+     final Duration timeoutdur = const Duration(seconds: 45); 
+// burda timout süresi arttılıacak süre 1 dk ya çıkarılacak renderin çalışması için gereken süre
      Future<http.Response> fetchNotes(String userId)async{
       return client.get(
         Uri.parse("$baseUrl/get_notes"),
