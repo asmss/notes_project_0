@@ -34,17 +34,21 @@ Uygulama, verimlilik ve veri tutarlılığını sağlamak için hibrit bir verit
 1. **Repoyu klonlayın:**
    ```bash
    git clone [https://github.com/asmss/notes_project_0.git](https://github.com/asmss/notes_project_0.git)
-Proje dizinine gidin:
-cd notes_project_0/notes
+2. **Proje dizinine gidin:**
+   ```bash
+   cd notes_project_0/notes
 
-Bağımlılıkları yükleyin:
-flutter pub get
+3. **Bağımlılıkları yükleyin:**
+   ```bash
+    flutter pub get
 
-Isar kod oluşturucuyu çalıştırın:
-dart run build_runner build --delete-conflicting-outputs
+4. **Isar kod oluşturucuyu çalıştırın:**
+   ```bash
+    dart run build_runner build --delete-conflicting-outputs
 
-Uygulamayı çalıştırın:
-flutter run
+5. **Uygulamayı çalıştırın:**
+   ```bash
+     flutter run
 
 ---
 
