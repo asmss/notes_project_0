@@ -20,3 +20,10 @@ Uygulama, verimlilik ve veri tutarlılığını sağlamak için hibrit bir verit
 - **API Client:** http.Client
 
 ## Uygulama Görselleri
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; padding: 10px;">
+  <img src="assets/icon/ekran" alt="Bildirim" style="width: 200px; height: auto; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <img src="assets/icon/ekran2" alt="Ana sayfa" style="width: 200px; height: auto; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <img src="frontend/assets/icon/ekran3" alt="not ekleme" style="width:  200px; height: auto; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+
+</div>
