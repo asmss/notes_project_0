@@ -27,3 +27,25 @@ Uygulama, verimlilik ve veri tutarlılığını sağlamak için hibrit bir verit
   <img src="./notes/assets/icons/ekran3.jpeg" alt="not ekleme" style="width:  200px; height: auto; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 
 </div>
+
+
+## Kurulum ve Çalıştırma
+
+1. **Repoyu klonlayın:**
+   ```bash
+   git clone [https://github.com/asmss/notes_project_0.git](https://github.com/asmss/notes_project_0.git)
+Proje dizinine gidin:
+cd notes_project_0/notes
+
+Bağımlılıkları yükleyin:
+flutter pub get
+
+Isar kod oluşturucuyu çalıştırın:
+dart run build_runner build --delete-conflicting-outputs
+
+Uygulamayı çalıştırın:
+flutter run
+
+---
+
+
